@@ -8,9 +8,6 @@ import static org.junit.Assert.assertEquals;
 
 public class StringCodeTest {
 
-	//
-	// blowup
-	//
 	@Test
 	public void testBlowup_BasicCases() {
 		assertEquals("xxaaaabb", StringCode.blowup("xx3abb"));
@@ -43,8 +40,8 @@ public class StringCodeTest {
 		assertEquals("AB&&,- ab", StringCode.blowup("AB&&,- ab"));
 		assertEquals("", StringCode.blowup(""));
 	}
-	
-	
+
+
 	//
 	// maxRun
 	//
@@ -82,7 +79,12 @@ public class StringCodeTest {
 		assertEquals(2, StringCode.maxRun("112233"));
 		assertEquals(3, StringCode.maxRun("1112233"));
 	}
-
+	@Test
+	public void testStringIntersect(){
+		assertEquals(true, StringCode.stringIntersect("jkawdoadawds","udawdndofads",2));
+		assertEquals(true,StringCode.stringIntersect("a","udnvjknxcdeifashda",1));
+		assertEquals(false,StringCode.stringIntersect("fadajnzxjkska","dxbska",4));
+	}
 	// Need test cases for stringIntersect
-	
+
 }
